@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Forum|Fredoka+One|Poiret+One';
+@import 'node_modules/normalize.css/normalize.css';
 /*COLOR VARS*/
 $yellow: #faeb20;
 $purple: #7d3d57;
@@ -6,22 +8,136 @@ $white: white;
 $lightBlue: #b5d1e9;
 $black: black;
 
+/*Font Stacks*/
+$poiret: 'Poiret One', cursive;
+$fredoka: 'Fredoka One', cursive;
+$forum: 'Forum', cursive;
+
+/*Title Cards*/
 @mixin yellowCard() {
+	font-family: $fredoka;
 	background-color: $yellow;
 	color: $purple;
 }
 
 @mixin redCard() {
+	font-family: $fredoka;
 	background-color: $red;
 	color: $white;
 }
 
 @mixin blueCard() {
+	font-family: $fredoka;
 	background-color: $lightBlue;
 	color: #000;
 }
+
+@mixin cardPadding() {
+	padding: 1em;
+	margin: 1em;
+	width: 100%;
+}
+
 
 body {
 	background-image: url('../img/background.jpg');
 	background-size: cover;
 }
+
+.page-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+section.intro {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+header {
+	@include blueCard();
+	width: 50%;
+	h1 {
+		font-family: $poiret;
+		font-size: 5em;
+	}
+	h2 {
+		font-family: $fredoka;
+	}
+}
+
+.summary {
+	@include cardPadding();
+	font-family: $forum;
+	margin-top: 100px
+}
+
+.preamble {
+	@include redCard();
+	@include cardPadding();
+	float: right;
+	h3 {
+		font-family: $fredoka;
+		display: inline;
+		height: 100%;
+		@include redCard();
+	}
+	p {
+		display: inline;
+		font-family: $forum;
+	}
+}
+
+.main {
+	width: 70%;
+	padding: 3em;
+	float: left;
+}
+
+.explanation {
+	@include yellowCard();
+	@include cardPadding();
+	float: right;
+}
+
+.participation {
+	@include blueCard();
+	@include cardPadding();
+}
+
+.benefits {
+	@include redCard();
+	@include cardPadding();
+	float: right;
+	margin: -30px 30px 0 30px;
+}
+
+.requirements {
+	@include yellowCard();
+	@include cardPadding();
+}
+
+aside {
+	margin: 0;
+	width: 20%;
+	padding: 3em;
+	float: right;
+	font-family: $forum;
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+	li {
+		margin-left: 0;
+	}
+}
+
+
+
+
+
+
+
