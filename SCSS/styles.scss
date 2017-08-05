@@ -1,0 +1,27 @@
+/*COLOR VARS*/
+$yellow: #faeb20;
+$purple: #7d3d57;
+$red: #bc390b;
+$white: white;
+$lightBlue: #b5d1e9;
+$black: black;
+
+@mixin yellowCard() {
+	background-color: $yellow;
+	color: $purple;
+}
+
+@mixin redCard() {
+	background-color: $red;
+	color: $white;
+}
+
+@mixin blueCard() {
+	background-color: $lightBlue;
+	color: #000;
+}
+
+body {
+	background-image: url('../img/background.jpg');
+	background-size: cover;
+}
